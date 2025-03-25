@@ -3,13 +3,19 @@ import random
 from datetime import datetime
 from typing import Dict, List
 import openai
+import os
 
 class CodeEvaluator:
     def __init__(self):
         with open('user_progress.json', 'r') as f:
             self.progress = json.load(f)
-        # 设置 OpenAI API key
-        openai.api_key = "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"
+        # 从环境变量获取API密钥
+        api_key = os.environ.get("OPENAI_API_KEY")
+        if not api_key:
+            print("警告: API key未设置。请设置OPENAI_API_KEY环境变量。")
+            return
+        # 设置OpenAI API key
+        openai.api_key = api_key
     
     def evaluate_code(self, problem_name: str, code: str, time_taken: float) -> Dict:
         """使用 GPT API 评估用户提交的代码"""
