@@ -6,6 +6,28 @@ from problem_tree import ProblemTree, build_problem_tree
 import openai
 import re
 
+# 从.env文件读取环境变量
+def load_env():
+    try:
+        with open('.env', 'r') as f:
+            content = f.read()
+            # 直接查找OPENAI_API_KEY
+            api_key_match = re.search(r'OPENAI_API_KEY="(.*?)"', content, re.MULTILINE)
+            if api_key_match:
+                key = api_key_match.group(1).strip()
+                # 移除末尾可能存在的百分号
+                if key.endswith('%'):
+                    key = key[:-1]
+                os.environ["OPENAI_API_KEY"] = key
+                print("成功读取API密钥")
+            else:
+                print("警告: 在.env文件中未找到OPENAI_API_KEY")
+    except FileNotFoundError:
+        print("警告: .env文件未找到")
+
+# 加载环境变量
+load_env()
+
 class RecommendationSystem:
     def __init__(self):
         with open('problems.json', 'r') as f:

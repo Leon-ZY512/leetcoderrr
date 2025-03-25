@@ -1,0 +1,87 @@
+{
+    "user_progress": {
+      "categories": {
+        "Array": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "String": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Hash Table": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Dynamic Programming": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Math": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Sorting": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Greedy": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Depth-First Search": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Binary Search": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Breadth-First Search": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Tree": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Binary Tree": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Matrix": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Heap": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Graph": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Linked List": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        }
+      },
+      "problems": {}
+    }
+  }
