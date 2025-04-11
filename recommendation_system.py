@@ -5,7 +5,8 @@ from typing import List, Dict, Tuple
 from problem_tree import ProblemTree, build_problem_tree
 import openai
 import re
-
+from category_graph import CategoryGraph
+from collections import defaultdict
 # 从.env文件读取环境变量
 def load_env():
     try:
@@ -35,6 +36,7 @@ class RecommendationSystem:
         with open('user_progress.json', 'r') as f:
             self.progress = json.load(f)
         self.problem_tree = build_problem_tree(self.problems)
+        self.category_graph = CategoryGraph()
         
         # 创建solutions目录
         if not os.path.exists('solutions'):
@@ -557,7 +559,18 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         """Recommend problems based on performance after all categories have been explored"""
         recommendations = []
         all_scored_problems = []
+        max_per_category = 2
+        category_counts = defaultdict(int)
         
+        # use graph to identify next priority category
+        Strong_categories = self.get_user_strong_categories()
+        Weak_categories = self.get_user_weak_categories()
+        next_category = self.category_graph.get_next_category_via_dijkstra(
+            start_categories=Strong_categories or list(self.progress['user_progress']['categories'].keys()),
+            target_categories=Weak_categories,
+            user_progress=self.progress['user_progress']
+        )
+
         # Calculate total attempted problems
         total_attempted = sum(
             stats['total_attempted'] 
@@ -578,6 +591,9 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                     'link': problem.link
                 }, problem.category)
                 
+                if problem.category == next_category:
+                    score *= 2.0
+
                 problem.score = score
                 all_scored_problems.append(problem)
         
@@ -597,12 +613,17 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
             if problem.name in self.progress['user_progress']['problems'] and \
                self.progress['user_progress']['problems'][problem.name]['solved']:
                 continue
-                
+            
+            # limit each category to max_per_category problems
+            if category_counts[problem.category] >= max_per_category:
+                continue
+            
             # If we haven't seen this category yet or it's a high-scoring problem
             if problem.category not in categories_seen or problem.score > 2.0:
                 diverse_recommendations.append(problem)
                 categories_seen.add(problem.category)
-        
+                category_counts[problem.category] += 1
+
         # Second pass: if we need more recommendations, add highest scoring remaining problems
         if len(diverse_recommendations) < count:
             # Filter out problems already selected and ones already solved
