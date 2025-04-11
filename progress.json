@@ -1,42 +1,22 @@
 {
     "user_progress": {
       "categories": {
-        "Array": {
+        "Arrays and Hashing": {
           "total_attempted": 0,
           "correct_solutions": 0,
           "average_time": 0
         },
-        "String": {
+        "Two Pointers": {
           "total_attempted": 0,
           "correct_solutions": 0,
           "average_time": 0
         },
-        "Hash Table": {
+        "Sliding Window": {
           "total_attempted": 0,
           "correct_solutions": 0,
           "average_time": 0
         },
-        "Dynamic Programming": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Math": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Sorting": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Greedy": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Depth-First Search": {
+        "Stack": {
           "total_attempted": 0,
           "correct_solutions": 0,
           "average_time": 0
@@ -46,37 +26,47 @@
           "correct_solutions": 0,
           "average_time": 0
         },
-        "Breadth-First Search": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Tree": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Binary Tree": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Matrix": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Heap": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
-        "Graph": {
-          "total_attempted": 0,
-          "correct_solutions": 0,
-          "average_time": 0
-        },
         "Linked List": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Trees": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Tries": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Heap/Priority Queue": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Backtracking": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Graphs": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Dynamic Programming 1D": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Dynamic Programming 2D": {
+          "total_attempted": 0,
+          "correct_solutions": 0,
+          "average_time": 0
+        },
+        "Greedy": {
           "total_attempted": 0,
           "correct_solutions": 0,
           "average_time": 0
