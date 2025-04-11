@@ -5,7 +5,7 @@ from typing import List, Dict, Tuple
 from problem_tree import ProblemTree, build_problem_tree
 import openai
 import re
-from substring_Search import kmp_search, search_problems
+from substring_search import kmp_search, search_problems
 
 # 从.env文件读取环境变量
 def load_env():
