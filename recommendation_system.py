@@ -7,6 +7,8 @@ import openai
 import re
 from category_graph import CategoryGraph
 from collections import defaultdict
+from substring_search import kmp_search, search_problems
+
 # 从.env文件读取环境变量
 def load_env():
     try:
@@ -681,9 +683,10 @@ def main():
         print("3. View My Strong Areas")
         print("4. View Difficulty Distribution")
         print("5. Submit Current Problem")
-        print("6. Exit")
+        print("6. Search Problems")
+        print("7. Exit")
         
-        choice = input("\nSelect an option (1-6): ")
+        choice = input("\nSelect an option (1-7): ")
         
         if choice == '1':
             recommendations = recommender.get_recommendations()
@@ -769,6 +772,41 @@ def main():
                 print("Please enter y or n")
         
         elif choice == '6':
+            keyword = input("Enter a keyword to search for problems: ")
+            if not keyword:
+                continue
+
+            results = search_problems(keyword)
+
+            if not results:
+                print(f"No problems found containing '{keyword}'")
+                continue
+
+            print(f"\nFound {len(results)} problems:")
+            for i, problem in enumerate(results, 1):
+                print(f"\n{i}. {problem['name']}")
+                print(f"   difficulty: {problem['difficulty']}")
+                print(f"   category: {problem['category']}")
+                print(f"   link: {problem['link']}")
+
+            while True:
+                try:
+                    choice = int(input("\nSelect a problem (1-{}), or enter 0 to return: ".format(len(results))))
+                    if choice == 0:
+                        break
+                    if 1 <= choice <= len(results):
+                        current_problem = results[choice-1]
+                        current_file = recommender.generate_solution_file(current_problem)
+                        print(f"\nSelected problem: {current_problem['name']}")
+                        print(f"Solution file generated: {current_file}")
+                        print("Complete the code and use option 5 to submit your solution")
+                        break
+                    else:
+                        print("Invalid choice, please try again")
+                except ValueError:
+                    print("Please enter a valid number")
+
+        elif choice == '7':
             print("\nThank you for using the system! Goodbye!")
             break
         
