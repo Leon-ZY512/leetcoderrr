@@ -36,6 +36,7 @@ ENV/
 # User specific files
 solutions/
 user_progress.json
+simulated_user_progress.json
 
 # API keys and sensitive information
 secrets.json
