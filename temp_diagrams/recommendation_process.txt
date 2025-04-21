@@ -1,0 +1,43 @@
+```mermaid
+sequenceDiagram
+    participant U as 用户
+    participant RS as 推荐系统
+    participant PT as 问题树
+    participant DB as 用户数据库
+    participant GPT as GPT评分系统
+    
+    U->>RS: 请求推荐题目
+    RS->>DB: 读取用户进度
+    DB-->>RS: 返回用户数据
+    
+    alt 初始用户
+        RS->>PT: 获取初始题目
+        PT-->>RS: 返回基础题目
+    else 未尝试所有类别
+        RS->>DB: 获取已尝试类别
+        DB-->>RS: 返回类别数据
+        RS->>PT: 获取未尝试类别题目
+        PT-->>RS: 返回未尝试类别题目
+    else 基于用户表现的推荐
+        RS->>DB: 获取用户类别表现
+        DB-->>RS: 返回类别表现数据
+        RS->>RS: 计算每个题目的推荐分数
+        Note over RS: 根据用户能力和类别表现<br>计算分数
+        RS->>PT: 获取弱势类别的题目
+        PT-->>RS: 返回题目列表
+        RS->>RS: 排序题目
+        Note over RS: 基于难度、用户表现和推荐分数
+    end
+    
+    RS-->>U: 返回推荐题目列表
+    U->>RS: 选择题目
+    RS->>RS: 生成题目模板
+    RS-->>U: 提供题目模板
+    
+    U->>RS: 提交解答
+    RS->>GPT: 评估代码
+    Note over GPT: 评估:<br>- 正确性 (2.5分)<br>- 边界情况 (2分)<br>- 时间复杂度 (3.5分)<br>- 空间复杂度 (2分)
+    GPT-->>RS: 返回评估结果
+    RS->>DB: 更新用户进度
+    RS-->>U: 显示评估结果和反馈
+``` 
