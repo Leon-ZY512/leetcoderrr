@@ -1,0 +1,86 @@
+{
+    "user_progress": {
+        "categories": {
+            "Arrays and Hashing": {
+                "total_attempted": 18,
+                "correct_solutions": 14
+            },
+            "Two Pointers": {
+                "total_attempted": 15,
+                "correct_solutions": 12
+            },
+            "Sliding Window": {
+                "total_attempted": 12,
+                "correct_solutions": 9
+            },
+            "Stack": {
+                "total_attempted": 11,
+                "correct_solutions": 8
+            },
+            "Binary Search": {
+                "total_attempted": 20,
+                "correct_solutions": 19
+            },
+            "Linked List": {
+                "total_attempted": 12,
+                "correct_solutions": 9
+            },
+            "Trees": {
+                "total_attempted": 13,
+                "correct_solutions": 10
+            },
+            "Tries": {
+                "total_attempted": 7,
+                "correct_solutions": 5
+            },
+            "Heap/Priority Queue": {
+                "total_attempted": 9,
+                "correct_solutions": 7
+            },
+            "Backtracking": {
+                "total_attempted": 10,
+                "correct_solutions": 7
+            },
+            "Graphs": {
+                "total_attempted": 11,
+                "correct_solutions": 8
+            },
+            "Dynamic Programming 1D": {
+                "total_attempted": 12,
+                "correct_solutions": 12
+            },
+            "Dynamic Programming 2D": {
+                "total_attempted": 9,
+                "correct_solutions": 2
+            },
+            "Greedy": {
+                "total_attempted": 10,
+                "correct_solutions": 7
+            }
+        },
+        "problems": {
+            "Search in Rotated Sorted Array": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Search_in_Rotated_Sorted_Array.py",
+                        "score": 0.97,
+                        "feedback": "精确的二分查找实现，边界条件处理完美"
+                    }
+                ]
+            },
+            "Longest Common Subsequence": {
+                "attempts": 3,
+                "solved": false,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Longest_Common_Subsequence.py",
+                        "score": 0.32,
+                        "feedback": "动态规划状态转移方程有误，需要重新理解子问题构造"
+                    }
+                ]
+            }
+        }
+    }
+} 

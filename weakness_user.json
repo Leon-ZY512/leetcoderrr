@@ -1,0 +1,258 @@
+{
+    "user_id": "weakness_user_456",
+    "user_progress": {
+        "categories": {
+            "Arrays and Hashing": {
+                "total_attempted": 18,
+                "correct_solutions": 15
+            },
+            "Two Pointers": {
+                "total_attempted": 10,
+                "correct_solutions": 8
+            },
+            "Sliding Window": {
+                "total_attempted": 12,
+                "correct_solutions": 9
+            },
+            "Stack": {
+                "total_attempted": 8,
+                "correct_solutions": 6
+            },
+            "Binary Search": {
+                "total_attempted": 7,
+                "correct_solutions": 5
+            },
+            "Linked List": {
+                "total_attempted": 9,
+                "correct_solutions": 7
+            },
+            "Trees": {
+                "total_attempted": 8,
+                "correct_solutions": 6
+            },
+            "Tries": {
+                "total_attempted": 5,
+                "correct_solutions": 3
+            },
+            "Heap / Priority Queue": {
+                "total_attempted": 6,
+                "correct_solutions": 4
+            },
+            "Backtracking": {
+                "total_attempted": 7,
+                "correct_solutions": 4
+            },
+            "Graphs": {
+                "total_attempted": 8,
+                "correct_solutions": 3
+            },
+            "Dynamic Programming 1D": {
+                "total_attempted": 9,
+                "correct_solutions": 4
+            },
+            "Dynamic Programming 2D": {
+                "total_attempted": 6,
+                "correct_solutions": 2
+            },
+            "Greedy": {
+                "total_attempted": 8,
+                "correct_solutions": 5
+            }
+        },
+        "problems": {
+            "Contains Duplicate": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Contains_Duplicate.py",
+                        "score": 0.95,
+                        "feedback": "Excellent solution using a hash set for O(n) time complexity."
+                    }
+                ]
+            },
+            "Valid Anagram": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Valid_Anagram.py",
+                        "score": 0.9,
+                        "feedback": "Good solution using character counting with optimal time complexity."
+                    }
+                ]
+            },
+            "Two Sum": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Two_Sum.py",
+                        "score": 0.92,
+                        "feedback": "Excellent hash map solution with O(n) time complexity."
+                    }
+                ]
+            },
+            "Group Anagrams": {
+                "attempts": 2,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Group_Anagrams_1.py",
+                        "score": 0.6,
+                        "feedback": "Solution works but could be more efficient."
+                    },
+                    {
+                        "file_path": "solutions/Group_Anagrams_2.py",
+                        "score": 0.88,
+                        "feedback": "Much better approach using sorted strings as keys."
+                    }
+                ]
+            },
+            "Valid Palindrome": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Valid_Palindrome.py",
+                        "score": 0.85,
+                        "feedback": "Good two-pointer approach with correct handling of non-alphanumeric characters."
+                    }
+                ]
+            },
+            "3Sum": {
+                "attempts": 3,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/3Sum_1.py",
+                        "score": 0.45,
+                        "feedback": "Brute force approach is too slow for large inputs."
+                    },
+                    {
+                        "file_path": "solutions/3Sum_2.py",
+                        "score": 0.65,
+                        "feedback": "Better approach but still has some inefficiencies."
+                    },
+                    {
+                        "file_path": "solutions/3Sum_3.py",
+                        "score": 0.82,
+                        "feedback": "Good solution using sorting and two pointers with proper duplicate handling."
+                    }
+                ]
+            },
+            "Clone Graph": {
+                "attempts": 3,
+                "solved": false,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Clone_Graph_1.py",
+                        "score": 0.3,
+                        "feedback": "The solution doesn't handle cycles in the graph correctly."
+                    },
+                    {
+                        "file_path": "solutions/Clone_Graph_2.py",
+                        "score": 0.4,
+                        "feedback": "Still issues with the deep copy process and handling of visited nodes."
+                    },
+                    {
+                        "file_path": "solutions/Clone_Graph_3.py",
+                        "score": 0.6,
+                        "feedback": "Better but still missing some edge cases with disconnected components."
+                    }
+                ]
+            },
+            "Course Schedule": {
+                "attempts": 2,
+                "solved": false,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Course_Schedule_1.py",
+                        "score": 0.35,
+                        "feedback": "The cycle detection algorithm is not implemented correctly."
+                    },
+                    {
+                        "file_path": "solutions/Course_Schedule_2.py",
+                        "score": 0.55,
+                        "feedback": "Improved but still fails on some test cases with complex dependency cycles."
+                    }
+                ]
+            },
+            "Number of Islands": {
+                "attempts": 2,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Number_of_Islands_1.py",
+                        "score": 0.5,
+                        "feedback": "The implementation works for simple cases but has issues with boundary conditions."
+                    },
+                    {
+                        "file_path": "solutions/Number_of_Islands_2.py",
+                        "score": 0.75,
+                        "feedback": "Better DFS implementation with proper handling of visited cells."
+                    }
+                ]
+            },
+            "Pacific Atlantic Water Flow": {
+                "attempts": 1,
+                "solved": false,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Pacific_Atlantic_Water_Flow.py",
+                        "score": 0.45,
+                        "feedback": "The approach is on the right track but implementation has logical errors in the DFS traversal."
+                    }
+                ]
+            },
+            "Climbing Stairs": {
+                "attempts": 2,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Climbing_Stairs_1.py",
+                        "score": 0.4,
+                        "feedback": "Recursive solution without memoization leads to time limit exceeded."
+                    },
+                    {
+                        "file_path": "solutions/Climbing_Stairs_2.py",
+                        "score": 0.85,
+                        "feedback": "Good bottom-up DP solution with optimal space complexity."
+                    }
+                ]
+            },
+            "Coin Change": {
+                "attempts": 3,
+                "solved": false,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Coin_Change_1.py",
+                        "score": 0.3,
+                        "feedback": "The greedy approach doesn't work for all coin denominations."
+                    },
+                    {
+                        "file_path": "solutions/Coin_Change_2.py",
+                        "score": 0.45,
+                        "feedback": "Recursive approach without proper memoization is too slow."
+                    },
+                    {
+                        "file_path": "solutions/Coin_Change_3.py",
+                        "score": 0.6,
+                        "feedback": "DP approach is better but has an error in the base case handling."
+                    }
+                ]
+            },
+            "Longest Common Subsequence": {
+                "attempts": 1,
+                "solved": false,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Longest_Common_Subsequence.py",
+                        "score": 0.5,
+                        "feedback": "The 2D DP approach is correct but there are errors in the implementation of the recurrence relation."
+                    }
+                ]
+            }
+        }
+    }
+} 

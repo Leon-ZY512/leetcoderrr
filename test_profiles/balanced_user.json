@@ -1,0 +1,63 @@
+{
+    "user_progress": {
+        "categories": {
+            "Arrays and Hashing": {
+                "total_attempted": 6,
+                "correct_solutions": 4
+            },
+            "Two Pointers": {
+                "total_attempted": 5,
+                "correct_solutions": 3
+            },
+            "Stack": {
+                "total_attempted": 4,
+                "correct_solutions": 3
+            },
+            "Binary Search": {
+                "total_attempted": 3,
+                "correct_solutions": 2
+            },
+            "Sliding Window": {
+                "total_attempted": 3,
+                "correct_solutions": 2
+            },
+            "Linked List": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            },
+            "Trees": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            },
+            "Tries": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            },
+            "Heap/Priority Queue": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            },
+            "Backtracking": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            },
+            "Graphs": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            },
+            "Dynamic Programming 1D": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            },
+            "Dynamic Programming 2D": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            },
+            "Greedy": {
+                "total_attempted": 0,
+                "correct_solutions": 0
+            }
+        },
+        "problems": {}
+    }
+}

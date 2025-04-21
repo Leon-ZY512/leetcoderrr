@@ -1,0 +1,86 @@
+{
+    "user_progress": {
+        "categories": {
+            "Arrays and Hashing": {
+                "total_attempted": 25,
+                "correct_solutions": 24
+            },
+            "Two Pointers": {
+                "total_attempted": 16,
+                "correct_solutions": 13
+            },
+            "Sliding Window": {
+                "total_attempted": 14,
+                "correct_solutions": 11
+            },
+            "Stack": {
+                "total_attempted": 12,
+                "correct_solutions": 9
+            },
+            "Binary Search": {
+                "total_attempted": 15,
+                "correct_solutions": 11
+            },
+            "Linked List": {
+                "total_attempted": 13,
+                "correct_solutions": 10
+            },
+            "Trees": {
+                "total_attempted": 10,
+                "correct_solutions": 7
+            },
+            "Tries": {
+                "total_attempted": 8,
+                "correct_solutions": 5
+            },
+            "Heap/Priority Queue": {
+                "total_attempted": 9,
+                "correct_solutions": 6
+            },
+            "Backtracking": {
+                "total_attempted": 11,
+                "correct_solutions": 3
+            },
+            "Graphs": {
+                "total_attempted": 10,
+                "correct_solutions": 7
+            },
+            "Dynamic Programming 1D": {
+                "total_attempted": 12,
+                "correct_solutions": 8
+            },
+            "Dynamic Programming 2D": {
+                "total_attempted": 9,
+                "correct_solutions": 6
+            },
+            "Greedy": {
+                "total_attempted": 11,
+                "correct_solutions": 8
+            }
+        },
+        "problems": {
+            "Contains Duplicate": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Contains_Duplicate.py",
+                        "score": 0.99,
+                        "feedback": "高效的哈希表解决方案"
+                    }
+                ]
+            },
+            "N-Queens": {
+                "attempts": 4,
+                "solved": false,
+                "solutions": [
+                    {
+                        "file_path": "solutions/N_Queens.py",
+                        "score": 0.30,
+                        "feedback": "回溯实现有严重缺陷，需要重新理解约束条件"
+                    }
+                ]
+            }
+        }
+    }
+} 

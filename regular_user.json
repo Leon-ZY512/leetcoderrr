@@ -1,0 +1,167 @@
+{
+    "user_id": "regular_user_123",
+    "user_progress": {
+        "categories": {
+            "Arrays and Hashing": {
+                "total_attempted": 12,
+                "correct_solutions": 10
+            },
+            "Two Pointers": {
+                "total_attempted": 10,
+                "correct_solutions": 8
+            },
+            "Sliding Window": {
+                "total_attempted": 8,
+                "correct_solutions": 6
+            },
+            "Stack": {
+                "total_attempted": 7,
+                "correct_solutions": 5
+            },
+            "Binary Search": {
+                "total_attempted": 6,
+                "correct_solutions": 4
+            },
+            "Linked List": {
+                "total_attempted": 9,
+                "correct_solutions": 7
+            },
+            "Trees": {
+                "total_attempted": 8,
+                "correct_solutions": 6
+            },
+            "Tries": {
+                "total_attempted": 3,
+                "correct_solutions": 2
+            },
+            "Heap / Priority Queue": {
+                "total_attempted": 4,
+                "correct_solutions": 3
+            },
+            "Backtracking": {
+                "total_attempted": 5,
+                "correct_solutions": 3
+            },
+            "Graphs": {
+                "total_attempted": 8,
+                "correct_solutions": 5
+            },
+            "Dynamic Programming 1D": {
+                "total_attempted": 10,
+                "correct_solutions": 8
+            },
+            "Dynamic Programming 2D": {
+                "total_attempted": 6,
+                "correct_solutions": 5
+            },
+            "Greedy": {
+                "total_attempted": 7,
+                "correct_solutions": 5
+            }
+        },
+        "problems": {
+            "Two Sum": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Two_Sum.py",
+                        "score": 0.9,
+                        "feedback": "Excellent solution with optimal time complexity using a hash map."
+                    }
+                ]
+            },
+            "Valid Parentheses": {
+                "attempts": 2,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Valid_Parentheses_1.py",
+                        "score": 0.6,
+                        "feedback": "The solution works but has some edge cases that aren't handled properly."
+                    },
+                    {
+                        "file_path": "solutions/Valid_Parentheses_2.py",
+                        "score": 0.85,
+                        "feedback": "Good improvement, handling all edge cases correctly."
+                    }
+                ]
+            },
+            "Merge Two Sorted Lists": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Merge_Two_Sorted_Lists.py",
+                        "score": 0.88,
+                        "feedback": "Clean recursive solution with good time and space complexity."
+                    }
+                ]
+            },
+            "Best Time to Buy and Sell Stock": {
+                "attempts": 3,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Best_Time_to_Buy_and_Sell_Stock_1.py",
+                        "score": 0.4,
+                        "feedback": "Solution is too slow with O(n²) time complexity."
+                    },
+                    {
+                        "file_path": "solutions/Best_Time_to_Buy_and_Sell_Stock_2.py",
+                        "score": 0.65,
+                        "feedback": "Better approach but still not optimal."
+                    },
+                    {
+                        "file_path": "solutions/Best_Time_to_Buy_and_Sell_Stock_3.py",
+                        "score": 0.92,
+                        "feedback": "Excellent one-pass solution with O(n) time complexity."
+                    }
+                ]
+            },
+            "Maximum Subarray": {
+                "attempts": 2,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Maximum_Subarray_1.py",
+                        "score": 0.5,
+                        "feedback": "Works but not an optimal approach."
+                    },
+                    {
+                        "file_path": "solutions/Maximum_Subarray_2.py",
+                        "score": 0.85,
+                        "feedback": "Good implementation of Kadane's algorithm."
+                    }
+                ]
+            },
+            "Course Schedule": {
+                "attempts": 2,
+                "solved": false,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Course_Schedule_1.py",
+                        "score": 0.35,
+                        "feedback": "The solution doesn't correctly detect all cycles in the graph."
+                    },
+                    {
+                        "file_path": "solutions/Course_Schedule_2.py",
+                        "score": 0.65,
+                        "feedback": "Better approach but still missing some edge cases."
+                    }
+                ]
+            },
+            "Number of Islands": {
+                "attempts": 1,
+                "solved": true,
+                "solutions": [
+                    {
+                        "file_path": "solutions/Number_of_Islands.py",
+                        "score": 1.0,
+                        "feedback": "Perfect implementation of DFS to count connected components."
+                    }
+                ]
+            }
+        }
+    }
+} 
