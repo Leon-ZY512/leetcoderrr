@@ -37,7 +37,7 @@ ENV/
 # User specific files
 solutions/
 user_progress.json
-simulated_user_progress.json
+recommendation_log.txt
 
 # API keys and sensitive information
 secrets.json
