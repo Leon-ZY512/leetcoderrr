@@ -1,355 +1,164 @@
-2025-04-21 11:47:45,101 - INFO - 加载了 14 个类别的问题
-2025-04-21 11:47:45,838 - INFO - 开始Dijkstra算法寻找最优路径
-2025-04-21 11:47:45,839 - INFO - 起始类别: ['Arrays and Hashing', 'Two Pointers']
-2025-04-21 11:47:45,839 - INFO - 目标类别: ['Dynamic Programming 2D', 'Graphs', 'Dynamic Programming 1D']
-2025-04-21 11:47:45,839 - INFO - 计算类别 'Two Pointers' 的权重:
-2025-04-21 11:47:45,839 - INFO -   - 正确率: 0.80
-2025-04-21 11:47:45,839 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,839 - INFO -   - 问题 'Valid Palindrome' 得分: 0.85
-2025-04-21 11:47:45,839 - INFO -   - 问题 '3Sum' 得分: 0.82
-2025-04-21 11:47:45,839 - INFO -   - 该类别平均得分: 0.83 (基于 2 个问题)
-2025-04-21 11:47:45,839 - INFO -   - 最终权重: 0.13
-2025-04-21 11:47:45,839 - INFO - 从 Arrays and Hashing 到 Two Pointers 的调整后权重: 0.19
-2025-04-21 11:47:45,839 - INFO - 计算类别 'Sliding Window' 的权重:
-2025-04-21 11:47:45,839 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:45,839 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,839 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,839 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:45,839 - INFO - 从 Arrays and Hashing 到 Sliding Window 的调整后权重: 0.50
-2025-04-21 11:47:45,839 - INFO - 更新到 Sliding Window 的距离: inf -> 0.50
-2025-04-21 11:47:45,839 - INFO - 计算类别 'Stack' 的权重:
-2025-04-21 11:47:45,839 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:45,839 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,839 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,839 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:45,839 - INFO - 从 Arrays and Hashing 到 Stack 的调整后权重: 0.62
-2025-04-21 11:47:45,839 - INFO - 更新到 Stack 的距离: inf -> 0.62
-2025-04-21 11:47:45,840 - INFO - 计算类别 'Binary Search' 的权重:
-2025-04-21 11:47:45,840 - INFO -   - 正确率: 0.71
-2025-04-21 11:47:45,840 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,840 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,840 - INFO -   - 最终权重: 0.26
-2025-04-21 11:47:45,840 - INFO - 从 Arrays and Hashing 到 Binary Search 的调整后权重: 0.66
-2025-04-21 11:47:45,840 - INFO - 更新到 Binary Search 的距离: inf -> 0.66
-2025-04-21 11:47:45,840 - INFO - 计算类别 'Greedy' 的权重:
-2025-04-21 11:47:45,840 - INFO -   - 正确率: 0.62
-2025-04-21 11:47:45,840 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,840 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,840 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:45,840 - INFO - 从 Arrays and Hashing 到 Greedy 的调整后权重: 0.90
-2025-04-21 11:47:45,840 - INFO - 更新到 Greedy 的距离: inf -> 0.90
-2025-04-21 11:47:45,840 - INFO - 计算类别 'Sliding Window' 的权重:
-2025-04-21 11:47:45,840 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:45,840 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,840 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,840 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:45,840 - INFO - 从 Two Pointers 到 Sliding Window 的调整后权重: 0.38
-2025-04-21 11:47:45,840 - INFO - 更新到 Sliding Window 的距离: 0.50 -> 0.38
-2025-04-21 11:47:45,840 - INFO - 计算类别 'Linked List' 的权重:
-2025-04-21 11:47:45,840 - INFO -   - 正确率: 0.78
-2025-04-21 11:47:45,840 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,840 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,840 - INFO -   - 最终权重: 0.24
-2025-04-21 11:47:45,840 - INFO - 从 Two Pointers 到 Linked List 的调整后权重: 0.60
-2025-04-21 11:47:45,840 - INFO - 更新到 Linked List 的距离: inf -> 0.60
-2025-04-21 11:47:45,841 - INFO - 计算类别 'Binary Search' 的权重:
-2025-04-21 11:47:45,841 - INFO -   - 正确率: 0.71
-2025-04-21 11:47:45,841 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,841 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,841 - INFO -   - 最终权重: 0.26
-2025-04-21 11:47:45,841 - INFO - 从 Two Pointers 到 Binary Search 的调整后权重: 0.53
-2025-04-21 11:47:45,841 - INFO - 更新到 Binary Search 的距离: 0.66 -> 0.53
-2025-04-21 11:47:45,841 - INFO - 计算类别 'Dynamic Programming 1D' 的权重:
-2025-04-21 11:47:45,841 - INFO -   - 正确率: 0.44
-2025-04-21 11:47:45,841 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,841 - INFO -   - 问题 'Climbing Stairs' 得分: 0.85
-2025-04-21 11:47:45,841 - INFO -   - 问题 'Coin Change' 得分: 0.60
-2025-04-21 11:47:45,841 - INFO -   - 该类别平均得分: 0.72 (基于 2 个问题)
-2025-04-21 11:47:45,841 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:45,841 - INFO - 从 Sliding Window 到 Dynamic Programming 1D 的调整后权重: 0.91
-2025-04-21 11:47:45,841 - INFO - 更新到 Dynamic Programming 1D 的距离: inf -> 1.29
-2025-04-21 11:47:45,841 - INFO - 计算类别 'Greedy' 的权重:
-2025-04-21 11:47:45,841 - INFO -   - 正确率: 0.62
-2025-04-21 11:47:45,841 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,841 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,841 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:45,841 - INFO - 从 Sliding Window 到 Greedy 的调整后权重: 0.75
-2025-04-21 11:47:45,841 - INFO - 计算类别 'Dynamic Programming 1D' 的权重:
-2025-04-21 11:47:45,841 - INFO -   - 正确率: 0.44
-2025-04-21 11:47:45,841 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,841 - INFO -   - 问题 'Climbing Stairs' 得分: 0.85
-2025-04-21 11:47:45,841 - INFO -   - 问题 'Coin Change' 得分: 0.60
-2025-04-21 11:47:45,841 - INFO -   - 该类别平均得分: 0.72 (基于 2 个问题)
-2025-04-21 11:47:45,842 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:45,842 - INFO - 从 Binary Search 到 Dynamic Programming 1D 的调整后权重: 0.91
-2025-04-21 11:47:45,842 - INFO - 计算类别 'Greedy' 的权重:
-2025-04-21 11:47:45,842 - INFO -   - 正确率: 0.62
-2025-04-21 11:47:45,842 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,842 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,842 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:45,842 - INFO - 从 Binary Search 到 Greedy 的调整后权重: 0.75
-2025-04-21 11:47:45,842 - INFO - 计算类别 'Trees' 的权重:
-2025-04-21 11:47:45,842 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:45,842 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,842 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,842 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:45,842 - INFO - 从 Linked List 到 Trees 的调整后权重: 0.75
-2025-04-21 11:47:45,842 - INFO - 更新到 Trees 的距离: inf -> 1.35
-2025-04-21 11:47:45,842 - INFO - 计算类别 'Trees' 的权重:
-2025-04-21 11:47:45,842 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:45,842 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,842 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,842 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:45,842 - INFO - 从 Stack 到 Trees 的调整后权重: 0.50
-2025-04-21 11:47:45,842 - INFO - 更新到 Trees 的距离: 1.35 -> 1.12
-2025-04-21 11:47:45,842 - INFO - 计算类别 'Backtracking' 的权重:
-2025-04-21 11:47:45,842 - INFO -   - 正确率: 0.57
-2025-04-21 11:47:45,842 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,842 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,842 - INFO -   - 最终权重: 0.32
-2025-04-21 11:47:45,842 - INFO - 从 Stack 到 Backtracking 的调整后权重: 0.96
-2025-04-21 11:47:45,842 - INFO - 更新到 Backtracking 的距离: inf -> 1.59
-2025-04-21 11:47:45,843 - INFO - 计算类别 'Graphs' 的权重:
-2025-04-21 11:47:45,843 - INFO -   - 正确率: 0.38
-2025-04-21 11:47:45,843 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,843 - INFO -   - 问题 'Clone Graph' 得分: 0.60
-2025-04-21 11:47:45,843 - INFO -   - 问题 'Course Schedule' 得分: 0.55
-2025-04-21 11:47:45,843 - INFO -   - 问题 'Number of Islands' 得分: 0.75
-2025-04-21 11:47:45,843 - INFO -   - 问题 'Pacific Atlantic Water Flow' 得分: 0.45
-2025-04-21 11:47:45,843 - INFO -   - 该类别平均得分: 0.59 (基于 4 个问题)
-2025-04-21 11:47:45,843 - INFO -   - 最终权重: 0.37
-2025-04-21 11:47:45,843 - INFO - 从 Stack 到 Graphs 的调整后权重: 1.31
-2025-04-21 11:47:45,843 - INFO - 更新到 Graphs 的距离: inf -> 1.93
-2025-04-21 11:47:45,843 - INFO - 计算类别 'Dynamic Programming 2D' 的权重:
-2025-04-21 11:47:45,843 - INFO -   - 正确率: 0.33
-2025-04-21 11:47:45,843 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,843 - INFO -   - 问题 'Longest Common Subsequence' 得分: 0.50
-2025-04-21 11:47:45,843 - INFO -   - 该类别平均得分: 0.50 (基于 1 个问题)
-2025-04-21 11:47:45,843 - INFO -   - 最终权重: 0.42
-2025-04-21 11:47:45,843 - INFO - 从 Greedy 到 Dynamic Programming 2D 的调整后权重: 1.46
-2025-04-21 11:47:45,843 - INFO - 更新到 Dynamic Programming 2D 的距离: inf -> 2.36
-2025-04-21 11:47:45,843 - INFO - 计算类别 'Tries' 的权重:
-2025-04-21 11:47:45,843 - INFO -   - 正确率: 0.60
-2025-04-21 11:47:45,843 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,843 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,843 - INFO -   - 最终权重: 0.31
-2025-04-21 11:47:45,843 - INFO - 从 Trees 到 Tries 的调整后权重: 0.62
-2025-04-21 11:47:45,843 - INFO - 更新到 Tries 的距离: inf -> 1.75
-2025-04-21 11:47:45,843 - INFO - 计算类别 'Heap / Priority Queue' 的权重:
-2025-04-21 11:47:45,843 - INFO -   - 正确率: 0.67
-2025-04-21 11:47:45,843 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,843 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,843 - INFO -   - 最终权重: 0.28
-2025-04-21 11:47:45,843 - INFO - 从 Trees 到 Heap / Priority Queue 的调整后权重: 0.71
-2025-04-21 11:47:45,843 - INFO - 更新到 Heap / Priority Queue 的距离: inf -> 1.83
-2025-04-21 11:47:45,843 - INFO - 计算类别 'Backtracking' 的权重:
-2025-04-21 11:47:45,844 - INFO -   - 正确率: 0.57
-2025-04-21 11:47:45,844 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,844 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:45,844 - INFO -   - 最终权重: 0.32
-2025-04-21 11:47:45,844 - INFO - 从 Trees 到 Backtracking 的调整后权重: 0.96
-2025-04-21 11:47:45,844 - INFO - 计算类别 'Graphs' 的权重:
-2025-04-21 11:47:45,844 - INFO -   - 正确率: 0.38
-2025-04-21 11:47:45,844 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:45,844 - INFO -   - 问题 'Clone Graph' 得分: 0.60
-2025-04-21 11:47:45,844 - INFO -   - 问题 'Course Schedule' 得分: 0.55
-2025-04-21 11:47:45,844 - INFO -   - 问题 'Number of Islands' 得分: 0.75
-2025-04-21 11:47:45,844 - INFO -   - 问题 'Pacific Atlantic Water Flow' 得分: 0.45
-2025-04-21 11:47:45,844 - INFO -   - 该类别平均得分: 0.59 (基于 4 个问题)
-2025-04-21 11:47:45,844 - INFO -   - 最终权重: 0.37
-2025-04-21 11:47:45,844 - INFO - 从 Trees 到 Graphs 的调整后权重: 0.93
-2025-04-21 11:47:45,844 - INFO - 找到目标类别: Dynamic Programming 1D
-2025-04-21 11:47:45,844 - INFO - 最终距离: 1.2891666666666666
-2025-04-21 11:47:45,844 - INFO - 找到路径: Two Pointers -> Sliding Window -> Dynamic Programming 1D
-2025-04-21 11:47:54,469 - INFO - 开始Dijkstra算法寻找最优路径
-2025-04-21 11:47:54,469 - INFO - 起始类别: ['Arrays and Hashing', 'Two Pointers']
-2025-04-21 11:47:54,469 - INFO - 目标类别: ['Dynamic Programming 2D', 'Graphs', 'Dynamic Programming 1D']
-2025-04-21 11:47:54,469 - INFO - 计算类别 'Two Pointers' 的权重:
-2025-04-21 11:47:54,469 - INFO -   - 正确率: 0.80
-2025-04-21 11:47:54,469 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,469 - INFO -   - 问题 'Valid Palindrome' 得分: 0.85
-2025-04-21 11:47:54,469 - INFO -   - 问题 '3Sum' 得分: 0.82
-2025-04-21 11:47:54,469 - INFO -   - 该类别平均得分: 0.83 (基于 2 个问题)
-2025-04-21 11:47:54,469 - INFO -   - 最终权重: 0.13
-2025-04-21 11:47:54,469 - INFO - 从 Arrays and Hashing 到 Two Pointers 的调整后权重: 0.19
-2025-04-21 11:47:54,469 - INFO - 计算类别 'Sliding Window' 的权重:
-2025-04-21 11:47:54,469 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:54,469 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,470 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,470 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:54,470 - INFO - 从 Arrays and Hashing 到 Sliding Window 的调整后权重: 0.50
-2025-04-21 11:47:54,470 - INFO - 更新到 Sliding Window 的距离: inf -> 0.50
-2025-04-21 11:47:54,470 - INFO - 计算类别 'Stack' 的权重:
-2025-04-21 11:47:54,470 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:54,470 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,470 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,470 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:54,470 - INFO - 从 Arrays and Hashing 到 Stack 的调整后权重: 0.62
-2025-04-21 11:47:54,470 - INFO - 更新到 Stack 的距离: inf -> 0.62
-2025-04-21 11:47:54,470 - INFO - 计算类别 'Binary Search' 的权重:
-2025-04-21 11:47:54,470 - INFO -   - 正确率: 0.71
-2025-04-21 11:47:54,470 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,470 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,470 - INFO -   - 最终权重: 0.26
-2025-04-21 11:47:54,470 - INFO - 从 Arrays and Hashing 到 Binary Search 的调整后权重: 0.66
-2025-04-21 11:47:54,470 - INFO - 更新到 Binary Search 的距离: inf -> 0.66
-2025-04-21 11:47:54,470 - INFO - 计算类别 'Greedy' 的权重:
-2025-04-21 11:47:54,470 - INFO -   - 正确率: 0.62
-2025-04-21 11:47:54,470 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,471 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,471 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:54,471 - INFO - 从 Arrays and Hashing 到 Greedy 的调整后权重: 0.90
-2025-04-21 11:47:54,471 - INFO - 更新到 Greedy 的距离: inf -> 0.90
-2025-04-21 11:47:54,471 - INFO - 计算类别 'Sliding Window' 的权重:
-2025-04-21 11:47:54,471 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:54,471 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,471 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,471 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:54,471 - INFO - 从 Two Pointers 到 Sliding Window 的调整后权重: 0.38
-2025-04-21 11:47:54,471 - INFO - 更新到 Sliding Window 的距离: 0.50 -> 0.38
-2025-04-21 11:47:54,471 - INFO - 计算类别 'Linked List' 的权重:
-2025-04-21 11:47:54,471 - INFO -   - 正确率: 0.78
-2025-04-21 11:47:54,471 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,471 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,471 - INFO -   - 最终权重: 0.24
-2025-04-21 11:47:54,471 - INFO - 从 Two Pointers 到 Linked List 的调整后权重: 0.60
-2025-04-21 11:47:54,471 - INFO - 更新到 Linked List 的距离: inf -> 0.60
-2025-04-21 11:47:54,471 - INFO - 计算类别 'Binary Search' 的权重:
-2025-04-21 11:47:54,471 - INFO -   - 正确率: 0.71
-2025-04-21 11:47:54,471 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,471 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,471 - INFO -   - 最终权重: 0.26
-2025-04-21 11:47:54,472 - INFO - 从 Two Pointers 到 Binary Search 的调整后权重: 0.53
-2025-04-21 11:47:54,472 - INFO - 更新到 Binary Search 的距离: 0.66 -> 0.53
-2025-04-21 11:47:54,472 - INFO - 计算类别 'Dynamic Programming 1D' 的权重:
-2025-04-21 11:47:54,472 - INFO -   - 正确率: 0.44
-2025-04-21 11:47:54,472 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,472 - INFO -   - 问题 'Climbing Stairs' 得分: 0.85
-2025-04-21 11:47:54,472 - INFO -   - 问题 'Coin Change' 得分: 0.60
-2025-04-21 11:47:54,472 - INFO -   - 该类别平均得分: 0.72 (基于 2 个问题)
-2025-04-21 11:47:54,472 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:54,472 - INFO - 从 Sliding Window 到 Dynamic Programming 1D 的调整后权重: 0.91
-2025-04-21 11:47:54,472 - INFO - 更新到 Dynamic Programming 1D 的距离: inf -> 1.29
-2025-04-21 11:47:54,472 - INFO - 计算类别 'Greedy' 的权重:
-2025-04-21 11:47:54,472 - INFO -   - 正确率: 0.62
-2025-04-21 11:47:54,472 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,472 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,472 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:54,472 - INFO - 从 Sliding Window 到 Greedy 的调整后权重: 0.75
-2025-04-21 11:47:54,472 - INFO - 计算类别 'Dynamic Programming 1D' 的权重:
-2025-04-21 11:47:54,473 - INFO -   - 正确率: 0.44
-2025-04-21 11:47:54,473 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,473 - INFO -   - 问题 'Climbing Stairs' 得分: 0.85
-2025-04-21 11:47:54,473 - INFO -   - 问题 'Coin Change' 得分: 0.60
-2025-04-21 11:47:54,473 - INFO -   - 该类别平均得分: 0.72 (基于 2 个问题)
-2025-04-21 11:47:54,473 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:54,473 - INFO - 从 Binary Search 到 Dynamic Programming 1D 的调整后权重: 0.91
-2025-04-21 11:47:54,473 - INFO - 计算类别 'Greedy' 的权重:
-2025-04-21 11:47:54,473 - INFO -   - 正确率: 0.62
-2025-04-21 11:47:54,473 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,473 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,473 - INFO -   - 最终权重: 0.30
-2025-04-21 11:47:54,473 - INFO - 从 Binary Search 到 Greedy 的调整后权重: 0.75
-2025-04-21 11:47:54,473 - INFO - 计算类别 'Trees' 的权重:
-2025-04-21 11:47:54,473 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:54,473 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,473 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,473 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:54,473 - INFO - 从 Linked List 到 Trees 的调整后权重: 0.75
-2025-04-21 11:47:54,473 - INFO - 更新到 Trees 的距离: inf -> 1.35
-2025-04-21 11:47:54,473 - INFO - 计算类别 'Trees' 的权重:
-2025-04-21 11:47:54,473 - INFO -   - 正确率: 0.75
-2025-04-21 11:47:54,473 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,474 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,474 - INFO -   - 最终权重: 0.25
-2025-04-21 11:47:54,474 - INFO - 从 Stack 到 Trees 的调整后权重: 0.50
-2025-04-21 11:47:54,474 - INFO - 更新到 Trees 的距离: 1.35 -> 1.12
-2025-04-21 11:47:54,474 - INFO - 计算类别 'Backtracking' 的权重:
-2025-04-21 11:47:54,474 - INFO -   - 正确率: 0.57
-2025-04-21 11:47:54,474 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,474 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,474 - INFO -   - 最终权重: 0.32
-2025-04-21 11:47:54,474 - INFO - 从 Stack 到 Backtracking 的调整后权重: 0.96
-2025-04-21 11:47:54,474 - INFO - 更新到 Backtracking 的距离: inf -> 1.59
-2025-04-21 11:47:54,474 - INFO - 计算类别 'Graphs' 的权重:
-2025-04-21 11:47:54,474 - INFO -   - 正确率: 0.38
-2025-04-21 11:47:54,474 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,474 - INFO -   - 问题 'Clone Graph' 得分: 0.60
-2025-04-21 11:47:54,474 - INFO -   - 问题 'Course Schedule' 得分: 0.55
-2025-04-21 11:47:54,474 - INFO -   - 问题 'Number of Islands' 得分: 0.75
-2025-04-21 11:47:54,474 - INFO -   - 问题 'Pacific Atlantic Water Flow' 得分: 0.45
-2025-04-21 11:47:54,474 - INFO -   - 该类别平均得分: 0.59 (基于 4 个问题)
-2025-04-21 11:47:54,474 - INFO -   - 最终权重: 0.37
-2025-04-21 11:47:54,474 - INFO - 从 Stack 到 Graphs 的调整后权重: 1.31
-2025-04-21 11:47:54,474 - INFO - 更新到 Graphs 的距离: inf -> 1.93
-2025-04-21 11:47:54,474 - INFO - 计算类别 'Dynamic Programming 2D' 的权重:
-2025-04-21 11:47:54,475 - INFO -   - 正确率: 0.33
-2025-04-21 11:47:54,475 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,475 - INFO -   - 问题 'Longest Common Subsequence' 得分: 0.50
-2025-04-21 11:47:54,475 - INFO -   - 该类别平均得分: 0.50 (基于 1 个问题)
-2025-04-21 11:47:54,475 - INFO -   - 最终权重: 0.42
-2025-04-21 11:47:54,475 - INFO - 从 Greedy 到 Dynamic Programming 2D 的调整后权重: 1.46
-2025-04-21 11:47:54,475 - INFO - 更新到 Dynamic Programming 2D 的距离: inf -> 2.36
-2025-04-21 11:47:54,475 - INFO - 计算类别 'Tries' 的权重:
-2025-04-21 11:47:54,475 - INFO -   - 正确率: 0.60
-2025-04-21 11:47:54,475 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,475 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,475 - INFO -   - 最终权重: 0.31
-2025-04-21 11:47:54,475 - INFO - 从 Trees 到 Tries 的调整后权重: 0.62
-2025-04-21 11:47:54,475 - INFO - 更新到 Tries 的距离: inf -> 1.75
-2025-04-21 11:47:54,475 - INFO - 计算类别 'Heap / Priority Queue' 的权重:
-2025-04-21 11:47:54,475 - INFO -   - 正确率: 0.67
-2025-04-21 11:47:54,475 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,476 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,476 - INFO -   - 最终权重: 0.28
-2025-04-21 11:47:54,476 - INFO - 从 Trees 到 Heap / Priority Queue 的调整后权重: 0.71
-2025-04-21 11:47:54,476 - INFO - 更新到 Heap / Priority Queue 的距离: inf -> 1.83
-2025-04-21 11:47:54,476 - INFO - 计算类别 'Backtracking' 的权重:
-2025-04-21 11:47:54,476 - INFO -   - 正确率: 0.57
-2025-04-21 11:47:54,476 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,476 - INFO -   - 该类别没有已解决的问题
-2025-04-21 11:47:54,476 - INFO -   - 最终权重: 0.32
-2025-04-21 11:47:54,476 - INFO - 从 Trees 到 Backtracking 的调整后权重: 0.96
-2025-04-21 11:47:54,476 - INFO - 计算类别 'Graphs' 的权重:
-2025-04-21 11:47:54,476 - INFO -   - 正确率: 0.38
-2025-04-21 11:47:54,476 - INFO -   - 正规化时间: 0.00
-2025-04-21 11:47:54,476 - INFO -   - 问题 'Clone Graph' 得分: 0.60
-2025-04-21 11:47:54,476 - INFO -   - 问题 'Course Schedule' 得分: 0.55
-2025-04-21 11:47:54,476 - INFO -   - 问题 'Number of Islands' 得分: 0.75
-2025-04-21 11:47:54,476 - INFO -   - 问题 'Pacific Atlantic Water Flow' 得分: 0.45
-2025-04-21 11:47:54,476 - INFO -   - 该类别平均得分: 0.59 (基于 4 个问题)
-2025-04-21 11:47:54,476 - INFO -   - 最终权重: 0.37
-2025-04-21 11:47:54,476 - INFO - 从 Trees 到 Graphs 的调整后权重: 0.93
-2025-04-21 11:47:54,476 - INFO - 找到目标类别: Dynamic Programming 1D
-2025-04-21 11:47:54,476 - INFO - 最终距离: 1.2891666666666666
-2025-04-21 11:47:54,477 - INFO - 找到路径: Two Pointers -> Sliding Window -> Dynamic Programming 1D
-推荐类别: Sliding Window (路径: Two Pointers -> Sliding Window -> Dynamic Programming 1D)
-提升问题 'Best Time to Buy and Sell Stock' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Longest Substring Without Repeating Characters' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Longest Repeating Character Replacement' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Permutation in String' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Longest Substring with At Most K Distinct Characters' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Fruit Into Baskets' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Longest Substring with At Most Two Distinct Characters' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Minimum Window Substring' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Sliding Window Median' 的优先级，因为它属于推荐类别 'Sliding Window'
-提升问题 'Substring with Concatenation of All Words' 的优先级，因为它属于推荐类别 'Sliding Window'
-所有候选问题(按分数排序):
-  1. Longest Substring Without Repeating Characters (类别: Sliding Window, 分数: 7.80)
-  2. Longest Repeating Character Replacement (类别: Sliding Window, 分数: 7.80)
-  3. Permutation in String (类别: Sliding Window, 分数: 7.80)
-  4. Longest Substring with At Most K Distinct Characters (类别: Sliding Window, 分数: 7.80)
-  5. Fruit Into Baskets (类别: Sliding Window, 分数: 7.80)
-  6. Longest Substring with At Most Two Distinct Characters (类别: Sliding Window, 分数: 7.80)
-  7. Best Time to Buy and Sell Stock (类别: Sliding Window, 分数: 7.20)
-  8. Min Cost Climbing Stairs (类别: Dynamic Programming 1D, 分数: 6.75)
-  9. Coin Change (类别: Dynamic Programming 1D, 分数: 3.60)
-  10. Kth Largest Element in a Stream (类别: Heap/Priority Queue, 分数: 3.00)
-最终推荐问题:
-  1. Longest Substring Without Repeating Characters (难度: Medium, 类别: Sliding Window)
-     原因: This Medium difficulty problem is recommended based on the learning path from Two Pointers to Sliding Window.
-  2. Longest Repeating Character Replacement (难度: Medium, 类别: Sliding Window)
-     原因: This Medium difficulty problem is recommended based on the learning path from Two Pointers to Sliding Window.
-  3. Min Cost Climbing Stairs (难度: Easy, 类别: Dynamic Programming 1D)
-     原因: To maintain category diversity, this Easy problem from Dynamic Programming 1D (your success rate: 44.4%) is recommended. This category was selected because it complements your current learning path with a different problem-solving approach.
-===== 推荐流程结束 =====
+2025-04-22 17:40:24,027 - INFO - Loaded 14 categories of problems
+2025-04-22 17:40:24,027 - INFO - Starting Dijkstra algorithm to find optimal path
+2025-04-22 17:40:24,027 - INFO - Start categories: ['Arrays and Hashing', 'Two Pointers']
+2025-04-22 17:40:24,027 - INFO - Target categories: ['Dynamic Programming 2D', 'Graphs', 'Dynamic Programming 1D']
+2025-04-22 17:40:24,028 - INFO - Computing weight for category 'Two Pointers':
+2025-04-22 17:40:24,028 - INFO -   - Accuracy: 0.80
+2025-04-22 17:40:24,028 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,028 - INFO -   - Problem 'Valid Palindrome' score: 0.85
+2025-04-22 17:40:24,028 - INFO -   - Problem '3Sum' score: 0.82
+2025-04-22 17:40:24,028 - INFO -   - Category average score: 0.83 (based on 2 problems)
+2025-04-22 17:40:24,028 - INFO -   - Final weight: 0.13
+2025-04-22 17:40:24,028 - INFO - Adjusted weight from Arrays and Hashing to Two Pointers: 0.19
+2025-04-22 17:40:24,028 - INFO - Computing weight for category 'Sliding Window':
+2025-04-22 17:40:24,028 - INFO -   - Accuracy: 0.75
+2025-04-22 17:40:24,028 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,028 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,028 - INFO -   - Final weight: 0.25
+2025-04-22 17:40:24,028 - INFO - Adjusted weight from Arrays and Hashing to Sliding Window: 0.50
+2025-04-22 17:40:24,028 - INFO - Updating distance to Sliding Window: inf -> 0.50
+2025-04-22 17:40:24,028 - INFO - Computing weight for category 'Stack':
+2025-04-22 17:40:24,028 - INFO -   - Accuracy: 0.75
+2025-04-22 17:40:24,028 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,028 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,028 - INFO -   - Final weight: 0.25
+2025-04-22 17:40:24,028 - INFO - Adjusted weight from Arrays and Hashing to Stack: 0.62
+2025-04-22 17:40:24,028 - INFO - Updating distance to Stack: inf -> 0.62
+2025-04-22 17:40:24,028 - INFO - Computing weight for category 'Binary Search':
+2025-04-22 17:40:24,028 - INFO -   - Accuracy: 0.71
+2025-04-22 17:40:24,028 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,028 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,028 - INFO -   - Final weight: 0.26
+2025-04-22 17:40:24,028 - INFO - Adjusted weight from Arrays and Hashing to Binary Search: 0.66
+2025-04-22 17:40:24,028 - INFO - Updating distance to Binary Search: inf -> 0.66
+2025-04-22 17:40:24,028 - INFO - Computing weight for category 'Greedy':
+2025-04-22 17:40:24,028 - INFO -   - Accuracy: 0.62
+2025-04-22 17:40:24,029 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,029 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,029 - INFO -   - Final weight: 0.30
+2025-04-22 17:40:24,029 - INFO - Adjusted weight from Arrays and Hashing to Greedy: 0.90
+2025-04-22 17:40:24,029 - INFO - Updating distance to Greedy: inf -> 0.90
+2025-04-22 17:40:24,029 - INFO - Computing weight for category 'Sliding Window':
+2025-04-22 17:40:24,029 - INFO -   - Accuracy: 0.75
+2025-04-22 17:40:24,029 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,029 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,029 - INFO -   - Final weight: 0.25
+2025-04-22 17:40:24,029 - INFO - Adjusted weight from Two Pointers to Sliding Window: 0.38
+2025-04-22 17:40:24,029 - INFO - Updating distance to Sliding Window: 0.50 -> 0.38
+2025-04-22 17:40:24,029 - INFO - Computing weight for category 'Linked List':
+2025-04-22 17:40:24,029 - INFO -   - Accuracy: 0.78
+2025-04-22 17:40:24,029 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,029 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,029 - INFO -   - Final weight: 0.24
+2025-04-22 17:40:24,029 - INFO - Adjusted weight from Two Pointers to Linked List: 0.60
+2025-04-22 17:40:24,029 - INFO - Updating distance to Linked List: inf -> 0.60
+2025-04-22 17:40:24,029 - INFO - Computing weight for category 'Binary Search':
+2025-04-22 17:40:24,029 - INFO -   - Accuracy: 0.71
+2025-04-22 17:40:24,029 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,029 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,029 - INFO -   - Final weight: 0.26
+2025-04-22 17:40:24,029 - INFO - Adjusted weight from Two Pointers to Binary Search: 0.53
+2025-04-22 17:40:24,029 - INFO - Updating distance to Binary Search: 0.66 -> 0.53
+2025-04-22 17:40:24,029 - INFO - Computing weight for category 'Dynamic Programming 1D':
+2025-04-22 17:40:24,029 - INFO -   - Accuracy: 0.44
+2025-04-22 17:40:24,029 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,029 - INFO -   - Problem 'Climbing Stairs' score: 0.85
+2025-04-22 17:40:24,029 - INFO -   - Problem 'Coin Change' score: 0.60
+2025-04-22 17:40:24,029 - INFO -   - Category average score: 0.72 (based on 2 problems)
+2025-04-22 17:40:24,029 - INFO -   - Final weight: 0.30
+2025-04-22 17:40:24,029 - INFO - Adjusted weight from Sliding Window to Dynamic Programming 1D: 0.91
+2025-04-22 17:40:24,030 - INFO - Updating distance to Dynamic Programming 1D: inf -> 1.29
+2025-04-22 17:40:24,030 - INFO - Computing weight for category 'Greedy':
+2025-04-22 17:40:24,030 - INFO -   - Accuracy: 0.62
+2025-04-22 17:40:24,030 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,030 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,030 - INFO -   - Final weight: 0.30
+2025-04-22 17:40:24,030 - INFO - Adjusted weight from Sliding Window to Greedy: 0.75
+2025-04-22 17:40:24,030 - INFO - Computing weight for category 'Dynamic Programming 1D':
+2025-04-22 17:40:24,030 - INFO -   - Accuracy: 0.44
+2025-04-22 17:40:24,030 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,030 - INFO -   - Problem 'Climbing Stairs' score: 0.85
+2025-04-22 17:40:24,030 - INFO -   - Problem 'Coin Change' score: 0.60
+2025-04-22 17:40:24,030 - INFO -   - Category average score: 0.72 (based on 2 problems)
+2025-04-22 17:40:24,030 - INFO -   - Final weight: 0.30
+2025-04-22 17:40:24,030 - INFO - Adjusted weight from Binary Search to Dynamic Programming 1D: 0.91
+2025-04-22 17:40:24,030 - INFO - Computing weight for category 'Greedy':
+2025-04-22 17:40:24,030 - INFO -   - Accuracy: 0.62
+2025-04-22 17:40:24,030 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,030 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,030 - INFO -   - Final weight: 0.30
+2025-04-22 17:40:24,030 - INFO - Adjusted weight from Binary Search to Greedy: 0.75
+2025-04-22 17:40:24,030 - INFO - Computing weight for category 'Trees':
+2025-04-22 17:40:24,030 - INFO -   - Accuracy: 0.75
+2025-04-22 17:40:24,030 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,030 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,030 - INFO -   - Final weight: 0.25
+2025-04-22 17:40:24,030 - INFO - Adjusted weight from Linked List to Trees: 0.75
+2025-04-22 17:40:24,030 - INFO - Updating distance to Trees: inf -> 1.35
+2025-04-22 17:40:24,030 - INFO - Computing weight for category 'Trees':
+2025-04-22 17:40:24,030 - INFO -   - Accuracy: 0.75
+2025-04-22 17:40:24,030 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,030 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,030 - INFO -   - Final weight: 0.25
+2025-04-22 17:40:24,030 - INFO - Adjusted weight from Stack to Trees: 0.50
+2025-04-22 17:40:24,031 - INFO - Updating distance to Trees: 1.35 -> 1.12
+2025-04-22 17:40:24,031 - INFO - Computing weight for category 'Backtracking':
+2025-04-22 17:40:24,031 - INFO -   - Accuracy: 0.57
+2025-04-22 17:40:24,031 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,031 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,031 - INFO -   - Final weight: 0.32
+2025-04-22 17:40:24,031 - INFO - Adjusted weight from Stack to Backtracking: 0.96
+2025-04-22 17:40:24,031 - INFO - Updating distance to Backtracking: inf -> 1.59
+2025-04-22 17:40:24,031 - INFO - Computing weight for category 'Graphs':
+2025-04-22 17:40:24,031 - INFO -   - Accuracy: 0.38
+2025-04-22 17:40:24,031 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,031 - INFO -   - Problem 'Clone Graph' score: 0.60
+2025-04-22 17:40:24,031 - INFO -   - Problem 'Course Schedule' score: 0.55
+2025-04-22 17:40:24,031 - INFO -   - Problem 'Number of Islands' score: 0.75
+2025-04-22 17:40:24,031 - INFO -   - Problem 'Pacific Atlantic Water Flow' score: 0.45
+2025-04-22 17:40:24,031 - INFO -   - Category average score: 0.59 (based on 4 problems)
+2025-04-22 17:40:24,031 - INFO -   - Final weight: 0.37
+2025-04-22 17:40:24,031 - INFO - Adjusted weight from Stack to Graphs: 1.31
+2025-04-22 17:40:24,031 - INFO - Updating distance to Graphs: inf -> 1.93
+2025-04-22 17:40:24,031 - INFO - Computing weight for category 'Dynamic Programming 2D':
+2025-04-22 17:40:24,031 - INFO -   - Accuracy: 0.33
+2025-04-22 17:40:24,031 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,031 - INFO -   - Problem 'Longest Common Subsequence' score: 0.50
+2025-04-22 17:40:24,031 - INFO -   - Category average score: 0.50 (based on 1 problems)
+2025-04-22 17:40:24,031 - INFO -   - Final weight: 0.42
+2025-04-22 17:40:24,031 - INFO - Adjusted weight from Greedy to Dynamic Programming 2D: 1.46
+2025-04-22 17:40:24,031 - INFO - Updating distance to Dynamic Programming 2D: inf -> 2.36
+2025-04-22 17:40:24,031 - INFO - Computing weight for category 'Tries':
+2025-04-22 17:40:24,031 - INFO -   - Accuracy: 0.60
+2025-04-22 17:40:24,031 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,031 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,031 - INFO -   - Final weight: 0.31
+2025-04-22 17:40:24,032 - INFO - Adjusted weight from Trees to Tries: 0.62
+2025-04-22 17:40:24,032 - INFO - Updating distance to Tries: inf -> 1.75
+2025-04-22 17:40:24,032 - INFO - Computing weight for category 'Heap / Priority Queue':
+2025-04-22 17:40:24,032 - INFO -   - Accuracy: 0.67
+2025-04-22 17:40:24,032 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,032 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,032 - INFO -   - Final weight: 0.28
+2025-04-22 17:40:24,032 - INFO - Adjusted weight from Trees to Heap / Priority Queue: 0.71
+2025-04-22 17:40:24,032 - INFO - Updating distance to Heap / Priority Queue: inf -> 1.83
+2025-04-22 17:40:24,032 - INFO - Computing weight for category 'Backtracking':
+2025-04-22 17:40:24,032 - INFO -   - Accuracy: 0.57
+2025-04-22 17:40:24,032 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,032 - INFO -   - No solved problems in this category
+2025-04-22 17:40:24,032 - INFO -   - Final weight: 0.32
+2025-04-22 17:40:24,032 - INFO - Adjusted weight from Trees to Backtracking: 0.96
+2025-04-22 17:40:24,032 - INFO - Computing weight for category 'Graphs':
+2025-04-22 17:40:24,032 - INFO -   - Accuracy: 0.38
+2025-04-22 17:40:24,032 - INFO -   - Normalized time: 0.00
+2025-04-22 17:40:24,032 - INFO -   - Problem 'Clone Graph' score: 0.60
+2025-04-22 17:40:24,032 - INFO -   - Problem 'Course Schedule' score: 0.55
+2025-04-22 17:40:24,032 - INFO -   - Problem 'Number of Islands' score: 0.75
+2025-04-22 17:40:24,032 - INFO -   - Problem 'Pacific Atlantic Water Flow' score: 0.45
+2025-04-22 17:40:24,032 - INFO -   - Category average score: 0.59 (based on 4 problems)
+2025-04-22 17:40:24,032 - INFO -   - Final weight: 0.37
+2025-04-22 17:40:24,032 - INFO - Adjusted weight from Trees to Graphs: 0.93
+2025-04-22 17:40:24,032 - INFO - Found target category: Dynamic Programming 1D
+2025-04-22 17:40:24,032 - INFO - Final distance: 1.2891666666666666
+2025-04-22 17:40:24,032 - INFO - Found path: Two Pointers -> Sliding Window -> Dynamic Programming 1D
+nd path: Two Pointers -> Sliding Window -> Dynamic Programming 1D

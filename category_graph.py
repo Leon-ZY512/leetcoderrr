@@ -5,7 +5,7 @@ import logging
 
 class CategoryGraph:
     def __init__(self):
-        # 设置日志记录
+        # Setup logger
         self.logger = self._setup_logger()
         
         # Load problems and extract categories
@@ -13,9 +13,9 @@ class CategoryGraph:
             self.problems = json.load(f)
             self.categories = list(self.problems.keys())
         
-        self.logger.info("加载了 %d 个类别的问题", len(self.categories))
+        self.logger.info("Loaded %d categories of problems", len(self.categories))
         
-        # 创建一个从问题名称到类别的映射字典，加速查找
+        # Create a mapping from problem name to category for faster lookups
         self.problem_to_category = {}
         for category_name, problems_list in self.problems.items():
             for problem in problems_list:
@@ -85,26 +85,26 @@ class CategoryGraph:
         }
 
     def _setup_logger(self):
-        """设置日志记录器"""
-        # 创建日志记录器
+        """Setup logger"""
+        # Create logger
         logger = logging.getLogger('category_graph')
         logger.setLevel(logging.DEBUG)
         
-        # 创建文件处理器
+        # Create file handler
         file_handler = logging.FileHandler('recommendation_log.txt', mode='w')
         file_handler.setLevel(logging.DEBUG)
         
-        # 创建格式化器
+        # Create formatter
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         file_handler.setFormatter(formatter)
         
-        # 添加处理器到日志记录器
+        # Add handler to logger
         logger.addHandler(file_handler)
         
         return logger
 
     def get_problem_category(self, problem_name):
-        """获取问题所属的类别"""
+        """Get the category a problem belongs to"""
         return self.problem_to_category.get(problem_name)
 
     def get_next_category_via_dijkstra(self, start_categories, target_categories, user_progress):
@@ -112,50 +112,50 @@ class CategoryGraph:
             data = user_progress['categories'][category]
             attempted = data['total_attempted']
             correct = data['correct_solutions']
-            # 如果没有average_time字段，则使用默认值0
+            # If average_time field doesn't exist, use default value 0
             time = data.get('average_time', 0)
             
-            # 计算正确率
+            # Calculate accuracy
             accuracy = correct / attempted if attempted > 0 else 0
             normalized_time = time / 1000  # Assuming 1000s is a reasonable max
             
-            # 计算该类别下所有已尝试题目的平均得分
+            # Calculate average score for all attempted problems in this category
             avg_problem_score = 0.0
             problem_scores_count = 0
             
-            # 记录调试信息
-            self.logger.info(f"计算类别 '{category}' 的权重:")
-            self.logger.info(f"  - 正确率: {accuracy:.2f}")
-            self.logger.info(f"  - 正规化时间: {normalized_time:.2f}")
+            # Log debug info
+            self.logger.info(f"Computing weight for category '{category}':")
+            self.logger.info(f"  - Accuracy: {accuracy:.2f}")
+            self.logger.info(f"  - Normalized time: {normalized_time:.2f}")
             
-            # 遍历所有问题，找出属于该类别的问题并计算平均分
+            # Loop through all problems, find those belonging to this category and calculate average score
             for problem_name, problem_data in user_progress.get('problems', {}).items():
-                # 检查问题是否有solutions
+                # Check if problem has solutions
                 if problem_data.get('solutions', []):
-                    # 获取最新的solution评分
+                    # Get score from the latest solution
                     latest_solution = problem_data['solutions'][-1]
                     score = latest_solution.get('score', 0.0)
                     
-                    # 获取问题类别
+                    # Get problem category
                     problem_category = self.get_problem_category(problem_name)
                     
-                    # 如果题目属于当前类别，加入计算
+                    # If problem belongs to current category, include in calculation
                     if problem_category == category:
-                        self.logger.info(f"  - 问题 '{problem_name}' 得分: {score:.2f}")
+                        self.logger.info(f"  - Problem '{problem_name}' score: {score:.2f}")
                         avg_problem_score += score
                         problem_scores_count += 1
             
-            # 计算平均分
+            # Calculate average score
             if problem_scores_count > 0:
                 avg_problem_score /= problem_scores_count
-                self.logger.info(f"  - 该类别平均得分: {avg_problem_score:.2f} (基于 {problem_scores_count} 个问题)")
+                self.logger.info(f"  - Category average score: {avg_problem_score:.2f} (based on {problem_scores_count} problems)")
             else:
-                self.logger.info(f"  - 该类别没有已解决的问题")
-                avg_problem_score = 0.5  # 对于没有解决问题的类别，使用中等得分
+                self.logger.info(f"  - No solved problems in this category")
+                avg_problem_score = 0.5  # For categories with no solved problems, use medium score
             
-            # 新的权重计算公式，考虑正确率、题目平均得分和时间
+            # New weight formula, considering accuracy, average problem score, and time
             weight = (1 - accuracy) * 0.4 + (1 - avg_problem_score) * 0.3 + normalized_time * 0.3
-            self.logger.info(f"  - 最终权重: {weight:.2f}")
+            self.logger.info(f"  - Final weight: {weight:.2f}")
             return weight
 
         visited = set()
@@ -172,9 +172,9 @@ class CategoryGraph:
         # Previous nodes to reconstruct path
         previous = {category: None for category in self.graph}
         
-        self.logger.info("开始Dijkstra算法寻找最优路径")
-        self.logger.info(f"起始类别: {start_categories}")
-        self.logger.info(f"目标类别: {target_categories}")
+        self.logger.info("Starting Dijkstra algorithm to find optimal path")
+        self.logger.info(f"Start categories: {start_categories}")
+        self.logger.info(f"Target categories: {target_categories}")
         
         # Dijkstra algorithm
         while queue:
@@ -183,14 +183,14 @@ class CategoryGraph:
             
             # If we've reached a target, we're done
             if current_node in target_categories:
-                self.logger.info(f"找到目标类别: {current_node}")
-                self.logger.info(f"最终距离: {current_distance}")
+                self.logger.info(f"Found target category: {current_node}")
+                self.logger.info(f"Final distance: {current_distance}")
                 path = []
                 while current_node:
                     path.append(current_node)
                     current_node = previous[current_node]
                 path.reverse()
-                self.logger.info(f"找到路径: {' -> '.join(path)}")
+                self.logger.info(f"Found path: {' -> '.join(path)}")
                 return (path, current_distance)
             
             # Skip already visited nodes
@@ -208,18 +208,18 @@ class CategoryGraph:
                 
                 # Compute weight for this neighbor based on user progress
                 adjusted_weight = compute_weight(neighbor) * base_weight
-                self.logger.info(f"从 {current_node} 到 {neighbor} 的调整后权重: {adjusted_weight:.2f}")
+                self.logger.info(f"Adjusted weight from {current_node} to {neighbor}: {adjusted_weight:.2f}")
                 
                 # Calculate new distance
                 distance = current_distance + adjusted_weight
                 
                 # If we found a shorter path, update distance
                 if distance < distances[neighbor]:
-                    self.logger.info(f"更新到 {neighbor} 的距离: {distances[neighbor]:.2f} -> {distance:.2f}")
+                    self.logger.info(f"Updating distance to {neighbor}: {distances[neighbor]:.2f} -> {distance:.2f}")
                     distances[neighbor] = distance
                     previous[neighbor] = current_node
                     heapq.heappush(queue, (distance, neighbor))
         
         # If we get here, no path was found
-        self.logger.warning("没有找到从起始类别到目标类别的路径")
+        self.logger.warning("No path found from start categories to target categories")
         return (None, float('infinity'))

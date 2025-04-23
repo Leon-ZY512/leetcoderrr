@@ -55,10 +55,10 @@
             "link": "https://leetcode.com/problems/4sum/"
         },
         {
-            "name": "Trapping Rain Water",
-            "difficulty": "Hard",
+            "name": "Contiguous Array",
+            "difficulty": "Medium",
             "category": "Arrays and Hashing",
-            "link": "https://leetcode.com/problems/trapping-rain-water/"
+            "link": "https://leetcode.com/problems/contiguous-array/"
         }
     ],
     "Two Pointers": [
@@ -155,10 +155,10 @@
             "link": "https://leetcode.com/problems/minimum-window-substring/"
         },
         {
-            "name": "Sliding Window Maximum",
+            "name": "Sliding Window Median",
             "difficulty": "Hard",
             "category": "Sliding Window",
-            "link": "https://leetcode.com/problems/sliding-window-maximum/"
+            "link": "https://leetcode.com/problems/sliding-window-median/"
         },
         {
             "name": "Longest Substring with At Most K Distinct Characters",
@@ -241,10 +241,10 @@
             "link": "https://leetcode.com/problems/basic-calculator-ii/"
         },
         {
-            "name": "Remove K Digits",
+            "name": "Monotone Increasing Digits",
             "difficulty": "Medium",
             "category": "Stack",
-            "link": "https://leetcode.com/problems/remove-k-digits/"
+            "link": "https://leetcode.com/problems/monotone-increasing-digits/"
         }
     ],
     "Binary Search": [
@@ -347,10 +347,10 @@
             "link": "https://leetcode.com/problems/lru-cache/"
         },
         {
-            "name": "Merge k Sorted Lists",
-            "difficulty": "Hard",
+            "name": "Flatten a Multilevel Doubly Linked List",
+            "difficulty": "Medium",
             "category": "Linked List",
-            "link": "https://leetcode.com/problems/merge-k-sorted-lists/"
+            "link": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/"
         },
         {
             "name": "Reverse Nodes in k-Group",
@@ -427,10 +427,10 @@
             "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
         },
         {
-            "name": "Implement Trie (Prefix Tree)",
+            "name": "Binary Tree Paths",
             "difficulty": "Medium",
             "category": "Trees",
-            "link": "https://leetcode.com/problems/implement-trie-prefix-tree/"
+            "link": "https://leetcode.com/problems/binary-tree-paths/"
         }
     ],
     "Tries": [
@@ -867,4 +867,4 @@
             "link": "https://leetcode.com/problems/remove-k-digits/"
         }
     ]
-} 
+}

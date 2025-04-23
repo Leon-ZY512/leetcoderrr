@@ -9,16 +9,16 @@ from category_graph import CategoryGraph
 from collections import defaultdict
 from substring_search import kmp_search, search_problems
 
-# 从.env文件读取环境变量
+# Load environment variables from .env file
 def load_env():
     try:
         with open('.env', 'r') as f:
             content = f.read()
-            # 直接查找OPENAI_API_KEY
+            # Directly search for OPENAI_API_KEY
             api_key_match = re.search(r'OPENAI_API_KEY="(.*?)"', content, re.MULTILINE)
             if api_key_match:
                 key = api_key_match.group(1).strip()
-                # 移除末尾可能存在的百分号
+                # Remove percentage sign at the end if exists
                 if key.endswith('%'):
                     key = key[:-1]
                 os.environ["OPENAI_API_KEY"] = key
@@ -28,7 +28,7 @@ def load_env():
     except FileNotFoundError:
         print("Warning: .env file not found")
 
-# 加载环境变量
+# Load environment variables
 load_env()
 
 class RecommendationSystem:
@@ -40,7 +40,7 @@ class RecommendationSystem:
         self.problem_tree = build_problem_tree(self.problems)
         self.category_graph = CategoryGraph()
         
-        # 创建solutions目录
+        # Create solutions directory
         if not os.path.exists('solutions'):
             os.makedirs('solutions')
     
@@ -50,12 +50,12 @@ class RecommendationSystem:
         file_name = ''.join(c for c in problem['name'] if c.isalnum() or c == ' ').replace(' ', '_')
         file_path = f"solutions/{file_name}.py"
         
-        # 特殊处理：为新用户提供Reverse Linked List的详细模板
-        if problem['name'] == "Reverse Linked List" and self.is_initial_user():
-            content = self._generate_reverse_ll_guided_solution(problem)
-        # 默认的代码生成
-        else:
-            content = f'''"""
+        # # Special handling: Provide detailed template for Reverse Linked List for new users
+        # if problem['name'] == "Reverse Linked List" and self.is_initial_user():
+        #     content = self._generate_reverse_ll_guided_solution(problem)
+        # # Default code generation
+        # else:
+        content = f'''"""
 {problem['name']}
 Difficulty: {problem['difficulty']}
 Category: {problem['category']}
@@ -86,115 +86,14 @@ if __name__ == "__main__":
         
         return file_path
     
-    def _generate_reverse_ll_guided_solution(self, problem: Dict) -> str:
-        """为新用户生成Reverse Linked List的引导性解决方案"""
-        return f'''"""
-{problem['name']}
-Difficulty: {problem['difficulty']}
-Category: {problem['category']}
-Link: {problem['link']}
-"""
-
-# Definition for singly-linked list
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-def solution(head):
-    """
-    反转单链表
-    
-    参数:
-        head: ListNode, 链表的头节点
-    
-    返回:
-        ListNode, 反转后链表的头节点
-    
-    示例:
-        输入: 1->2->3->4->5->NULL
-        输出: 5->4->3->2->1->NULL
-    
-    解题思路:
-    1. 使用三个指针: prev, current, 和 next_temp
-    2. 初始化 prev 为 None, current 为 head
-    3. 遍历链表，逐步改变每个节点的 next 指针指向
-    4. 注意保存 next 节点防止断链
-    """
-    # 1. 初始化前驱指针为 None
-    prev = None
-    # 2. 初始化当前指针为头节点
-    current = head
-    
-    # 3. 遍历链表
-    while current:
-        # a. 保存下一个节点，防止链断开后无法访问
-        next_temp = current.next
-        
-        # b. 反转当前节点的指针，使其指向前一个节点
-        current.next = prev
-        
-        # c. 移动 prev 和 current 指针向前一步
-        prev = current
-        current = next_temp
-    
-    # 4. 返回新的头节点（原链表的尾节点）
-    return prev
-
-# 用于测试的辅助函数
-def create_linked_list(values):
-    """从列表创建链表"""
-    if not values:
-        return None
-    
-    head = ListNode(values[0])
-    current = head
-    
-    for val in values[1:]:
-        current.next = ListNode(val)
-        current = current.next
-    
-    return head
-
-def linked_list_to_list(head):
-    """将链表转换为列表以便打印"""
-    result = []
-    current = head
-    
-    while current:
-        result.append(current.val)
-        current = current.next
-    
-    return result
-
-if __name__ == "__main__":
-    # 测试用例
-    test_cases = [
-        [1, 2, 3, 4, 5],  # 标准测试
-        [1, 2],          # 短链表
-        []               # 空链表
-    ]
-    
-    for values in test_cases:
-        # 创建链表
-        head = create_linked_list(values)
-        # 反转链表
-        reversed_head = solution(head)
-        # 转换回列表以打印输出
-        result = linked_list_to_list(reversed_head)
-        
-        print(f"Input: {values}")
-        print(f"Output: {result}")
-        print()
-'''
     
     def evaluate_solution(self, file_path: str) -> Dict:
-        """使用GPT评估解决方案"""
+        """Evaluate solution using GPT"""
         try:
             with open(file_path, 'r') as f:
                 code = f.read()
             
-            # 从环境变量获取API密钥
+            # Get API key from environment variables
             api_key = os.environ.get("OPENAI_API_KEY")
             if not api_key:
                 return {
@@ -227,24 +126,24 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
             
             feedback = response.choices[0].message.content
             
-            # 解析GPT的反馈，提取分数
+            # Parse GPT feedback, extract score
             score = 0.0
             if "Final Score" in feedback or "final score" in feedback:
                 try:
                     score_matches = re.findall(r'(?:Final Score|final score).*?(\d+\.?\d*)\s*\/\s*(\d+\.?\d*)', feedback, re.IGNORECASE)
                     if score_matches:
                         numerator, denominator = score_matches[0]
-                        score = float(numerator) / float(denominator)  # 归一化到0-1范围
+                        score = float(numerator) / float(denominator)  # Normalize to 0-1 range
                 except:
                     pass
-            # 尝试从其他评价中提取分数
+            # Try to extract score from other evaluation text
             elif "score" in feedback.lower():
                 try:
-                    # 查找包含数字/数字格式的评分
+                    # Look for score in number/number format
                     score_matches = re.findall(r'score.*?(\d+\.?\d*)\s*\/\s*(\d+\.?\d*)', feedback.lower(), re.IGNORECASE)
                     if score_matches:
                         numerator, denominator = score_matches[0]
-                        score = float(numerator) / float(denominator)  # 归一化到0-1范围
+                        score = float(numerator) / float(denominator)  # Normalize to 0-1 range
                 except:
                     pass
             
@@ -256,11 +155,11 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         except Exception as e:
             return {
                 "score": 0.0,
-                "feedback": f"评估过程中出现错误：{str(e)}"
+                "feedback": f"Error during evaluation: {str(e)}"
             }
     
     def save_progress(self):
-        """保存用户进度到文件"""
+        """Save user progress to file"""
         with open('user_progress.json', 'w') as f:
             json.dump(self.progress, f, indent=4)
     
@@ -338,21 +237,21 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         return total_attempts == 0
     
     def calculate_category_score(self, category: str) -> float:
-        """计算分类的推荐优先级分数"""
+        """Calculate the recommendation priority score for a category"""
         stats = self.progress['user_progress']['categories'].get(category, {
             'total_attempted': 0,
             'correct_solutions': 0
         })
         
         if stats['total_attempted'] == 0:
-            return 1.0  # 未尝试过的分类优先级最高
+            return 1.0  # Highest priority for untried categories
         
         success_rate = stats['correct_solutions'] / stats['total_attempted']
         attempt_count = stats['total_attempted']
         
-        # 计算分数：考虑正确率和尝试次数
-        # 正确率越低，分数越高（需要加强）
-        # 尝试次数越多，分数越低（避免重复）
+        # Calculate score: consider success rate and attempt count
+        # Lower success rate = higher score (needs reinforcement)
+        # More attempts = lower score (avoid repetition)
         score = (1 - success_rate) * (1 / (1 + attempt_count * 0.1))
         return score
     
@@ -442,7 +341,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         """Recommend initial problems for first-time users from diverse categories"""
         initial_problems = []
         
-        # 首先，确保Two Sum是第一个推荐
+        # First, ensure Two Sum is the first recommendation
         two_sum_found = False
         for category_name, problems_list in self.problems.items():
             for problem in problems_list:
@@ -459,7 +358,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
             if two_sum_found:
                 break
                 
-        # 其次，确保Reverse Linked List是第二个推荐
+        # Second, ensure Reverse Linked List is the second recommendation
         reverse_ll_found = False
         for category_name, problems_list in self.problems.items():
             for problem in problems_list:
@@ -476,25 +375,25 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
             if reverse_ll_found:
                 break
         
-        # 如果没有找到Two Sum或Reverse Linked List（不太可能），继续常规推荐流程
+        # If Two Sum or Reverse Linked List not found (unlikely), continue with regular recommendation process
         if not two_sum_found:
             print("Warning: Two Sum problem not found in the database.")
         if not reverse_ll_found:
             print("Warning: Reverse Linked List problem not found in the database.")
         
-        # 获取所有唯一类别
+        # Get all unique categories
         all_categories = set()
         for category_problems in self.problems.values():
             for problem in category_problems:
                 all_categories.add(problem['category'])
         
-        # 创建按类别分类的简单问题字典
+        # Create dictionary of easy problems by category
         easy_problems_by_category = {}
         medium_problems_by_category = {}
         
         for category_name, problems_list in self.problems.items():
             for problem in problems_list:
-                # 跳过已经选择的Two Sum和Reverse Linked List
+                # Skip already selected Two Sum and Reverse Linked List
                 if problem['name'] == "Two Sum" or problem['name'] == "Reverse Linked List":
                     continue
                     
@@ -508,7 +407,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                         medium_problems_by_category[category] = []
                     medium_problems_by_category[category].append(problem)
         
-        # 获取多样化的类别选择，排除Two Sum和Reverse Linked List所在类别
+        # Get diverse category selection, excluding Two Sum and Reverse Linked List categories
         category_list = list(all_categories)
         excluded_categories = []
         if two_sum_found and initial_problems[0]['category'] in category_list:
@@ -516,21 +415,21 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         if reverse_ll_found and len(initial_problems) > 1 and initial_problems[1]['category'] in category_list:
             excluded_categories.append(initial_problems[1]['category'])
             
-        # 移除已经推荐过问题的类别
+        # Remove categories already recommended
         for category in excluded_categories:
             if category in category_list:
                 category_list.remove(category)
                 
         random.shuffle(category_list)
         
-        # 确定还需要推荐多少问题
+        # Determine how many more recommendations needed
         remaining_count = count - len(initial_problems)
         selected_categories = category_list[:min(remaining_count, len(category_list))]
         
-        # 从每个选定的类别中获取一个简单问题
+        # Get an easy problem from each selected category
         for category in selected_categories:
             if category in easy_problems_by_category and easy_problems_by_category[category]:
-                # 从该类别中选择一个随机简单问题
+                # Select a random easy problem from this category
                 problem = random.choice(easy_problems_by_category[category])
                 initial_problems.append({
                     'name': problem['name'],
@@ -540,7 +439,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                     'reason': f"This is an Easy problem in {problem['category']}, recommended to start your algorithm learning journey."
                 })
             elif category in medium_problems_by_category and medium_problems_by_category[category]:
-                # 如果该类别中没有简单问题，则尝试中等难度的问题
+                # If no easy problems in this category, try medium difficulty
                 problem = random.choice(medium_problems_by_category[category])
                 initial_problems.append({
                     'name': problem['name'],
@@ -550,7 +449,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                     'reason': f"This is a Medium problem in {problem['category']}, recommended to develop your algorithm skills."
                 })
         
-        # 如果我们还没有足够的问题，从其他类别中添加更多
+        # If we don't have enough problems yet, add more from other categories
         if len(initial_problems) < count:
             remaining_count = count - len(initial_problems)
             used_categories = {prob['category'] for prob in initial_problems}
@@ -579,42 +478,42 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         return initial_problems
     
     def get_user_weak_categories(self) -> List[str]:
-        """找出用户表现较弱的分类，按成功率从低到高排序
-        如果没有低于60%的分类，则返回表现最差的两个分类"""
+        """Find categories where user performance is weak, sorted by success rate from low to high
+        If no categories below 60%, return the two worst-performing categories"""
         categories_with_rates = []
         for category, stats in self.progress['user_progress']['categories'].items():
             if stats['total_attempted'] > 0:
                 success_rate = stats['correct_solutions'] / stats['total_attempted']
                 categories_with_rates.append((category, success_rate))
         
-        # 按成功率从低到高排序
+        # Sort by success rate from low to high
         categories_with_rates.sort(key=lambda x: x[1])
         
-        # 筛选出正确率低于60%的分类
+        # Filter categories with success rate below 60%
         weak_categories = [category for category, rate in categories_with_rates if rate < 0.6]
         
-        # 如果没有正确率低于60%的分类，返回表现最差的两个分类
+        # If no categories with success rate below 60%, return the two worst-performing categories
         if not weak_categories and categories_with_rates:
             return [category for category, _ in categories_with_rates[:2]]
         
         return weak_categories
     
     def get_user_strong_categories(self) -> List[str]:
-        """找出用户表现较强的分类，按成功率从高到低排序
-        如果没有高于80%的分类，则返回表现最好的两个分类"""
+        """Find categories where user performance is strong, sorted by success rate from high to low
+        If no categories above 80%, return the two best-performing categories"""
         categories_with_rates = []
         for category, stats in self.progress['user_progress']['categories'].items():
             if stats['total_attempted'] > 0:
                 success_rate = stats['correct_solutions'] / stats['total_attempted']
                 categories_with_rates.append((category, success_rate))
         
-        # 按成功率从高到低排序
+        # Sort by success rate from high to low
         categories_with_rates.sort(key=lambda x: x[1], reverse=True)
         
-        # 筛选出正确率高于80%的分类
+        # Filter categories with success rate above 80%
         strong_categories = [category for category, rate in categories_with_rates if rate >= 0.8]
         
-        # 如果没有正确率高于80%的分类，返回表现最好的两个分类
+        # If no categories with success rate above 80%, return the two best-performing categories
         if not strong_categories and categories_with_rates:
             return [category for category, _ in categories_with_rates[:2]]
         
@@ -626,16 +525,16 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         if self.is_initial_user():
             return self.get_initial_problems(count)
         
-        # 检查用户是否尝试过链表类别的问题
+        # Check if user has attempted problems in the Linked List category
         attempted_linked_list = False
         for category, stats in self.progress['user_progress']['categories'].items():
             if category == "Linked List" and stats['total_attempted'] > 0:
                 attempted_linked_list = True
                 break
         
-        # 如果用户没有尝试过链表类别的问题，强制推荐Reverse Linked List
+        # If user hasn't attempted Linked List problems, force recommend Reverse Linked List
         if not attempted_linked_list:
-            # 首先找到Reverse Linked List问题
+            # First find the Reverse Linked List problem
             reverse_ll_problem = None
             for category_name, problems_list in self.problems.items():
                 for problem in problems_list:
@@ -645,7 +544,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                 if reverse_ll_problem:
                     break
             
-            # 如果找到了Reverse Linked List问题，创建推荐列表
+            # If Reverse Linked List found, create recommendation list
             if reverse_ll_problem:
                 recommendations = [{
                     'name': reverse_ll_problem['name'],
@@ -655,7 +554,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                     'reason': "This is a fundamental linked list problem that teaches you how to manipulate pointers and understand the linked list data structure."
                 }]
                 
-                # 如果需要更多推荐，获取常规推荐并添加到列表中（跳过链表类别）
+                # If more recommendations needed, get regular recommendations and add to list (skip Linked List category)
                 if count > 1:
                     regular_recs = self._get_regular_recommendations(count - 1)
                     recommendations.extend(regular_recs)
@@ -682,7 +581,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         return self.get_performance_based_recommendations(count)
     
     def _get_regular_recommendations(self, count: int) -> List[Dict]:
-        """获取常规推荐（用于补充特定推荐）"""
+        """Get regular recommendations (to supplement specific recommendations)"""
         # Get a list of all unique categories
         all_categories = set()
         for category_problems in self.problems.values():
@@ -801,36 +700,36 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
         return recommendations
     
     def get_performance_based_recommendations(self, count: int) -> List[Dict]:
-        """基于用户表现和图算法推荐问题"""
+        """Recommend problems based on user performance and graph algorithms"""
         weak_categories = self.get_user_weak_categories()
         strong_categories = self.get_user_strong_categories()
         
-        # 记录日志 - 使用with语句确保日志文件正确关闭
+        # Log information - using with statement to ensure proper file closure
         with open('recommendation_log.txt', 'a') as logfile:
-            logfile.write("\n\n===== 开始新的推荐流程 =====\n")
-            logfile.write(f"用户ID: {self.progress.get('user_id', 'default_user')}\n")
-            logfile.write(f"弱势类别: {', '.join(weak_categories)}\n")
-            logfile.write(f"强势类别: {', '.join(strong_categories)}\n")
+            logfile.write("\n\n===== Starting New Recommendation Process =====\n")
+            logfile.write(f"User ID: {self.progress.get('user_id', 'default_user')}\n")
+            logfile.write(f"Weak Categories: {', '.join(weak_categories)}\n")
+            logfile.write(f"Strong Categories: {', '.join(strong_categories)}\n")
         
-        # 使用Dijkstra算法找到下一个最优类别
+        # Use Dijkstra's algorithm to find the next optimal category
         path_and_distance = self.category_graph.get_next_category_via_dijkstra(
-            strong_categories[:2] if strong_categories else ["Arrays"],  # 从强势类别开始
-            weak_categories[:3] if weak_categories else ["Dynamic Programming"],  # 前往弱势类别
+            strong_categories[:2] if strong_categories else ["Arrays"],  # Start from strong categories
+            weak_categories[:3] if weak_categories else ["Dynamic Programming"],  # Move towards weak categories
             self.progress['user_progress']
         )
         
-        # 解包路径和距离
+        # Unpack path and distance
         path, distance = path_and_distance
         
-        # 确定推荐类别
+        # Determine recommended category
         if path and len(path) > 1:
-            recommended_category = path[1]  # 推荐路径中的第二个类别（第一个为起始类别）
+            recommended_category = path[1]  # Recommend second category in path (first is starting category)
             with open('recommendation_log.txt', 'a') as logfile:
-                logfile.write(f"推荐类别: {recommended_category} (路径: {' -> '.join(path)})\n")
+                logfile.write(f"Recommended Category: {recommended_category} (Path: {' -> '.join(path)})\n")
         else:
             recommended_category = path[0] if path else weak_categories[0] if weak_categories else "Arrays"
             with open('recommendation_log.txt', 'a') as logfile:
-                logfile.write(f"推荐类别: {recommended_category} (直接推荐，无路径)\n")
+                logfile.write(f"Recommended Category: {recommended_category} (Direct recommendation, no path)\n")
         
         # Calculate total attempted problems
         total_attempted = sum(
@@ -838,7 +737,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
             for stats in self.progress['user_progress']['categories'].values()
         )
         
-        # 准备所有问题并计算分数
+        # Prepare all problems and calculate scores
         all_scored_problems = []
         for diff_node in self.problem_tree.difficulty_nodes.values():
             for problem in diff_node.children:
@@ -846,12 +745,12 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                 if problem.difficulty.value == 'Hard' and total_attempted < 14:
                     continue
                     
-                # 已解决的问题跳过
+                # Skip already solved problems
                 if problem.name in self.progress['user_progress']['problems'] and \
                    self.progress['user_progress']['problems'][problem.name].get('solved', False):
                     continue
                 
-                # 计算基础分数
+                # Calculate base score
                 score = self.calculate_problem_score({
                     'name': problem.name,
                     'difficulty': problem.difficulty.value,
@@ -859,50 +758,50 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                     'link': problem.link
                 }, problem.category)
                 
-                # 重要：对推荐类别中的问题加倍分数
+                # Important: Double the score for problems in recommended category
                 if problem.category == recommended_category:
-                    score *= 3.0  # 增加推荐类别的权重，使其更可能被选中
+                    score *= 3.0  # Increase the weight of recommended category to make it more likely to be selected
                     with open('recommendation_log.txt', 'a') as logfile:
-                        logfile.write(f"提升问题 '{problem.name}' 的优先级，因为它属于推荐类别 '{recommended_category}'\n")
+                        logfile.write(f"Boosting priority for problem '{problem.name}' because it belongs to recommended category '{recommended_category}'\n")
 
-                # 如果是路径中的第三个类别（备选类别），也提高权重
+                # If it's the third category in the path (alternate category), also boost weight
                 elif path and len(path) > 2 and problem.category == path[2]:
                     score *= 1.5
                 
                 problem.score = score
                 all_scored_problems.append(problem)
         
-        # 按分数排序
+        # Sort by score
         all_scored_problems.sort(key=lambda x: x.score, reverse=True)
         with open('recommendation_log.txt', 'a') as logfile:
-            logfile.write("所有候选问题(按分数排序):\n")
-            for i, p in enumerate(all_scored_problems[:10]):  # 只记录前10个
-                logfile.write(f"  {i+1}. {p.name} (类别: {p.category}, 分数: {p.score:.2f})\n")
+            logfile.write("All candidate problems (sorted by score):\n")
+            for i, p in enumerate(all_scored_problems[:10]):  # Only log top 10
+                logfile.write(f"  {i+1}. {p.name} (Category: {p.category}, Score: {p.score:.2f})\n")
         
-        # 确保类别多样性
+        # Ensure category diversity
         max_per_category = 2
         category_counts = defaultdict(int)
         categories_seen = set()
         diverse_recommendations = []
         
-        # 第一轮：尝试获取多样化的类别，优先选择推荐类别
+        # First round: Try to get diverse categories, prioritizing recommended category
         for problem in all_scored_problems:
             if len(diverse_recommendations) >= count:
                 break
             
-            # 限制每个类别的问题数量
+            # Limit number of problems per category
             if category_counts[problem.category] >= max_per_category:
                 continue
             
-            # 如果问题属于推荐类别或者是高分问题，添加到推荐列表
+            # If problem belongs to recommended category or is high-scoring, add to recommendations
             if problem.category == recommended_category or problem.score > 1.8:
                 diverse_recommendations.append(problem)
                 categories_seen.add(problem.category)
                 category_counts[problem.category] += 1
         
-        # 第二轮：确保推荐类别的问题被包含
+        # Second round: Ensure recommended category problems are included
         if recommended_category not in categories_seen:
-            # 寻找推荐类别中得分最高的未解决问题
+            # Find highest scoring unsolved problem in recommended category
             for problem in all_scored_problems:
                 if problem.category == recommended_category:
                     diverse_recommendations.append(problem)
@@ -910,7 +809,7 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                     category_counts[problem.category] += 1
                     break
         
-        # 第三轮：如果仍需更多推荐，添加其他高分问题
+        # Third round: If more recommendations needed, add other high-scoring problems
         if len(diverse_recommendations) < count:
             for problem in all_scored_problems:
                 if len(diverse_recommendations) >= count:
@@ -921,17 +820,17 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
                     categories_seen.add(problem.category)
                     category_counts[problem.category] += 1
         
-        # 格式化推荐结果
+        # Format recommendation results
         recommendations = []
-        for problem in diverse_recommendations[:count]:  # 确保最多只返回count个推荐
+        for problem in diverse_recommendations[:count]:  # Ensure at most count recommendations returned
             if problem.category == recommended_category:
                 if path and len(path) > 1:
                     reason = f"This {problem.difficulty.value} difficulty problem is recommended based on the learning path from {path[0]} to {recommended_category}."
                 else:
                     reason = f"This {problem.difficulty.value} difficulty problem is recommended from the {recommended_category} category based on your learning trajectory."
             else:
-                # 为多样性问题添加解释
-                if len(recommendations) >= 2:  # 如果这是第三个问题
+                # Add explanation for diversity problems
+                if len(recommendations) >= 2:  # If this is the third problem
                     category_stats = self.progress['user_progress']['categories'].get(problem.category, {})
                     if category_stats.get('total_attempted', 0) > 0:
                         success_rate = category_stats['correct_solutions'] / category_stats['total_attempted'] * 100
@@ -955,11 +854,11 @@ At the end of your evaluation, provide a total score (out of 10), formatted as: 
             })
         
         with open('recommendation_log.txt', 'a') as logfile:
-            logfile.write("最终推荐问题:\n")
+            logfile.write("Final recommended problems:\n")
             for i, rec in enumerate(recommendations):
-                logfile.write(f"  {i+1}. {rec['name']} (难度: {rec['difficulty']}, 类别: {rec['category']})\n")
-                logfile.write(f"     原因: {rec['reason']}\n")
-            logfile.write("===== 推荐流程结束 =====\n")
+                logfile.write(f"  {i+1}. {rec['name']} (Difficulty: {rec['difficulty']}, Category: {rec['category']})\n")
+                logfile.write(f"     Reason: {rec['reason']}\n")
+            logfile.write("===== Recommendation Process Complete =====\n")
         
         return recommendations
 
